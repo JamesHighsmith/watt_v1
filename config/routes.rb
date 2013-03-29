@@ -1,17 +1,40 @@
 WattV1::Application.routes.draw do
-  get "static_pages/BrowseInvestments"
 
-  get "static_pages/Participate"
+  get "static_pages/home"
 
-  get "static_pages/Submit_Project"
+  get "static_pages/profile"
 
-  get "static_pages/Learn_More"
+  get "static_pages/participate"
 
-  get "static_pages/Search"
+  get "static_pages/submit_sroject"
 
-  get "static_pages/Signup"
+  get "static_pages/research"
 
-  get "static_pages/Login"
+  get "static_pages/evaluate"
+
+  get "static_pages/design"
+
+  get "static_pages/finalize"
+
+  get "static_pages/browse_investments"
+
+  get "static_pages/install"
+
+  get "static_pages/earn"
+
+  get "static_pages/learn_more"
+
+  get "static_pages/how_watt_works"
+
+  get "static_pages/blog"
+
+  get "static_pages/about"
+
+  get "static_pages/search"
+
+  get "static_pages/signup"
+
+  get "static_pages/login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
