@@ -1,4 +1,18 @@
 WattV1::Application.routes.draw do
+  get "static_pages/BrowseInvestments"
+
+  get "static_pages/Participate"
+
+  get "static_pages/Submit_Project"
+
+  get "static_pages/Learn_More"
+
+  get "static_pages/Search"
+
+  get "static_pages/Signup"
+
+  get "static_pages/Login"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
