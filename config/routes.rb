@@ -1,40 +1,43 @@
 WattV1::Application.routes.draw do
+  get "users/new"
 
-  get "static_pages/home"
+  root to: 'static_pages#home'
 
-  get "static_pages/profile"
+  match '/signup',  to: 'users#new'
 
-  get "static_pages/participate"
+  match '/profile',             to: 'static_pages#profile'
 
-  get "static_pages/submit_sroject"
+  match '/participate',         to: 'static_pages#participate'
 
-  get "static_pages/research"
+  match '/submit_project',      to: 'static_pages#submit_project'
 
-  get "static_pages/evaluate"
+  match '/research',            to: 'static_pages#research'
 
-  get "static_pages/design"
+  match '/evaluate',            to: 'static_pages#evaluate'
 
-  get "static_pages/finalize"
+  match '/design',              to: 'static_pages#design'
 
-  get "static_pages/browse_investments"
+  match '/finalize',            to: 'static_pages#finalize'
 
-  get "static_pages/install"
+  match '/browse_investments',  to: 'static_pages#browse_investments'
 
-  get "static_pages/earn"
+  match '/install',             to: 'static_pages#install'
 
-  get "static_pages/learn_more"
+  match '/earn',                to: 'static_pages#earn'
 
-  get "static_pages/how_watt_works"
+  match '/learn_more',          to: 'static_pages#learn_more'
 
-  get "static_pages/blog"
+  match '/how_watt_works',      to: 'static_pages#how_watt_works'
 
-  get "static_pages/about"
+  match '/blog',                to: 'static_pages#blog'
 
-  get "static_pages/search"
+  match '/about',               to: 'static_pages#about'
 
-  get "static_pages/signup"
+  match '/search',              to: 'static_pages#search'
 
-  get "static_pages/login"
+  match '/signup',              to: 'static_pages#signup'
+
+  match '/login',               to: 'static_pages#login'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
