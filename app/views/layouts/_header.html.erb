@@ -1,0 +1,105 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+			<nav>
+				<ul class="nav">
+
+					<li><%= link_to image_tag("logo.png", :width => 140, :height => 50, :title=> "Click here to return home"), root_path %></li>
+					
+					<li><%= link_to "Browse Investments", browse_investments_path %></li>
+
+				  <li class="dropdown">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				      Participate
+				      <b class="caret"></b>
+				    </a>
+				    <ul class="dropdown-menu">
+				      
+				      <li>
+				      	<a href="/research">
+									<i class="icon-check"/></i>
+									Research Projects<br>
+								<h6>Vote and collaborate on new projects</h6>
+								</a>
+							</li>
+
+							<li class="divider"></li>
+				    	
+				    	<li>
+								<a href="/design">
+									<i class="icon-pencil"/></i>
+									Design Projects<br>
+								<h6>Help bring chosen projects to life</h6>
+								</a>
+							</li>
+
+							<li class="divider"></li>
+							
+							<li>
+								<a href="/finalize">
+									<i class="icon-time"/></i>
+									Finalize Projects<br>
+								<h6>Help put the final touches on projects</h6>
+								</a>
+							</li>
+
+				    </ul>
+				  </li>
+				</ul>
+
+				<ul class="nav">
+				  <li>
+				  	<a href="/submit_project" class="btn btn-large btn-success">Submit Project</a>
+				  </li>
+				</ul>
+				<ul class="nav">
+				  <li class="dropdown">
+				  	
+				  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				      Learn More
+				      <b class="caret"></b>
+				    </a>
+				    
+				    <ul class="dropdown-menu">
+						
+				    	<li>
+								<a href="/how_watt_works">
+									<i class="icon-cog"/></i>
+									How Watt Works
+								</a>
+							</li>
+
+							<li class="divider"></li>
+
+							<li>
+								<a href="/blog">
+									<i class="icon-comment"/></i>
+									Blog
+								</a>
+							</li>
+
+							<li class="divider"></li>
+							
+							<li>
+								<a href="/about">
+									<i class="icon-off"/></i>
+									About Us
+								</a>
+							</li>
+
+						</ul>
+				  </li>
+				
+				</ul>  
+
+				<ul class="nav pull-right">
+					
+					<li><%= link_to "Sign In", '#' %></li>
+          
+          <li><%= link_to "Sign Up", '#' %></li>  
+				
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
