@@ -1,105 +1,123 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<nav>
-				<ul class="nav">
-
-					<li><%= link_to image_tag("logo.png", :width => 140, :height => 50, :title=> "Click here to return home"), root_path %></li>
-					
-					<li><%= link_to "Browse Investments", browse_investments_path %></li>
-
-				  <li class="dropdown">
-				    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 			
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <%= link_to image_tag("logo.png", :height => "40", :width => "120", :class => "brand"), "/"  %>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse  navbar-responsive-collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+        <ul class="nav">
+        	<li><a href="/browse_investments">Browse Investments</a></li>
+        	<li class="divider-vertical"></li>
+					<li class="dropdown">
+				    <a href="/participate" class="dropdown-toggle" data-toggle="dropdown">
 				      Participate
 				      <b class="caret"></b>
 				    </a>
 				    <ul class="dropdown-menu">
-				      
 				      <li>
 				      	<a href="/research">
 									<i class="icon-check"/></i>
-									Research Projects<br>
+									Research A Project<br>
 								<h6>Vote and collaborate on new projects</h6>
 								</a>
 							</li>
-
 							<li class="divider"></li>
-				    	
 				    	<li>
 								<a href="/design">
 									<i class="icon-pencil"/></i>
-									Design Projects<br>
+									Design A Projects<br>
 								<h6>Help bring chosen projects to life</h6>
 								</a>
 							</li>
-
 							<li class="divider"></li>
-							
 							<li>
 								<a href="/finalize">
 									<i class="icon-time"/></i>
-									Finalize Projects<br>
+									Finalize A Project<br>
 								<h6>Help put the final touches on projects</h6>
 								</a>
 							</li>
-
 				    </ul>
 				  </li>
-				</ul>
-
-				<ul class="nav">
-				  <li>
-				  	<a href="/submit_project" class="btn btn-large btn-success">Submit Project</a>
-				  </li>
-				</ul>
-				<ul class="nav">
+					<li class="btn btn-success submit_btn">
+						<a href="/submit_project">Submit A Project Idea</a>
+					</li>
 				  <li class="dropdown">
-				  	
-				  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				  	<a href="/learn_more" class="dropdown-toggle" data-toggle="dropdown">
 				      Learn More
 				      <b class="caret"></b>
 				    </a>
-				    
 				    <ul class="dropdown-menu">
-						
 				    	<li>
 								<a href="/how_watt_works">
 									<i class="icon-cog"/></i>
-									How Watt Works
+									How Watt Works<br>
+								<h6>Clean energy project creation explained</h6>
 								</a>
 							</li>
-
 							<li class="divider"></li>
-
 							<li>
 								<a href="/blog">
 									<i class="icon-comment"/></i>
-									Blog
+									Blog<br>
+								<h6>Check out what we are working on</h6>
 								</a>
 							</li>
-
 							<li class="divider"></li>
-							
 							<li>
 								<a href="/about">
 									<i class="icon-off"/></i>
-									About Us
+									About Us<br>
+								<h6>Come meet the WA.TT team</h6>
 								</a>
 							</li>
-
 						</ul>
 				  </li>
-				
-				</ul>  
-
-				<ul class="nav pull-right">
-					
-					<li><%= link_to "Sign In", '#' %></li>
-          
-          <li><%= link_to "Sign Up", '#' %></li>  
-				
+					<li>
+						<form class="navbar-search pull-left" action="">
+							<input type="text" class="search-query span2"/>
+						</form>
+					</li>
 				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
+				<ul class="nav pull-right">
+					<% if user_signed_in? %>
+					<li>
+						<%= link_to("Profile", edit_user_registration_path) %>
+					</li>
+					<li>
+						<%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
+					</li>
+					<% else %>
+					<li>
+						<%= link_to("Log In", new_user_session_path) %>
+					</li>
+					<li class="divider-vertical"></li>
+          <li>
+          	<%= link_to("Sign Up", new_user_registration_path) %>
+          </li>
+          <% end %>  
+				</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+				
+
+				
+				  
+
+				

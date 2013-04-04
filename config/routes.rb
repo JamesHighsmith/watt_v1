@@ -1,9 +1,12 @@
 WattV1::Application.routes.draw do
+
+  devise_for :users
+
   get "users/new"
 
   root to: 'static_pages#home'
 
-  match '/signup',  to: 'users#new'
+  match '/signup',              to: 'users#new'
 
   match '/profile',             to: 'static_pages#profile'
 
