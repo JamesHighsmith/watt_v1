@@ -15,9 +15,13 @@
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse  navbar-responsive-collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
-        <ul class="nav">
-        	<li><a href="/browse_investments">Browse Investments</a></li>
+        <ul class="nav pull-right">
+        	<li>
+        		<a href="/browse_investments">Browse Investments</a>
+        	</li>
+        	
         	<li class="divider-vertical"></li>
+					
 					<li class="dropdown">
 				    <a href="/participate" class="dropdown-toggle" data-toggle="dropdown">
 				      Participate
@@ -49,9 +53,11 @@
 							</li>
 				    </ul>
 				  </li>
+					
 					<li class="btn btn-success submit_btn">
 						<a href="/submit_project">Submit A Project Idea</a>
 					</li>
+				  
 				  <li class="dropdown">
 				  	<a href="/learn_more" class="dropdown-toggle" data-toggle="dropdown">
 				      Learn More
@@ -88,24 +94,35 @@
 							<input type="text" class="search-query span2"/>
 						</form>
 					</li>
-				</ul>
-				<ul class="nav pull-right">
-					<% if user_signed_in? %>
+					
 					<li>
-						<%= link_to("Profile", edit_user_registration_path) %>
-					</li>
-					<li>
-						<%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
-					</li>
-					<% else %>
-					<li>
-						<%= link_to("Plug In", new_user_session_path) %>
-					</li>
-					<li class="divider-vertical"></li>
-          <li>
-          	<%= link_to("Sign Up", new_user_registration_path) %>
-          </li>
-          <% end %>  
+						<% if user_signed_in? %>
+							<li class="dropdown">
+						  	<a href="/profile" class="dropdown-toggle" data-toggle="dropdown">
+						      <%= current_user.name %>&nbsp<%= current_user.lastname %>
+						      <b class="caret"></b>
+						    </a>
+						    <ul class="dropdown-menu">
+						    	<li>
+										<%= link_to("Profile", edit_user_registration_path) %>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
+									</li>
+								</ul>
+						  </li>
+						<% else %>
+								<li>
+									<%= link_to("Plug In", new_user_session_path) %>
+								</li>
+								<li class="divider-vertical"></li>
+			          <li>
+			          	<%= link_to("Sign Up", new_user_registration_path) %>
+			          </li>
+	          <% end %>
+          </li>  
+					
 				</ul>
       </div>
     </div>
