@@ -1,11 +1,12 @@
 $navbarBackgroundHighlight: #3BB9FF;
 $navbarBackground: #38ACEC;
 $navbarLinkColor: #ffffff;
-$navbarLinkColorHover: #ADDFFF;
+$navbarLinkColorHover: #ffffff;
 $navbarLinkBackgroundActive: none;
 $navbarLinkColorActive: #ffffff;
 $navbarHeight: 35px;
 $baseFontFamily: Oxygen;
+
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
 @import 'bootstrap';
@@ -46,6 +47,10 @@ body{
   width: 1px;
   height: 110%;
   margin: 5% 0 5% 0;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+    display: block;    
 }
 
 
@@ -93,37 +98,76 @@ body{
   position: fixed; 
   top: 0; 
   left: 0; 
-  
-  /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%; 
+  .hero-unit{
+    background-color: transparent;
+    h1{
+      color: #ffffff;
+      font-size: 300%;
+      line-height:110%;
+      text-shadow: black 1px 1px 1px;
+      text-align:center;
+    }
+    h2{
+      color: #ffffff;
+      font-size: 350%;
+      line-height:120%;
+      text-shadow: black 1px 1px 1px;
+    }
+    .wrapper {
+      text-align: center;
+    }
+    .btn{
+      font-size: 200%;
+      padding: 20px 20px 20px 20px;
+      text-shadow: black 1px 1px 1px;
+    }
+  }
 }
 
-.hero-unit{
+/*--About Us--*/
+
+.about_body { 
+  background: url(brooklyn.jpg) no-repeat center center fixed;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%; 
+  .hero-unit{
   background-color: transparent;
-  h1{
-    color: #ffffff;
-    font-size: 300%;
-    line-height:110%;
-    text-shadow: black 1px 1px 1px;
-    text-align:center;
-  }
-  h2{
-    color: #ffffff;
-    font-size: 350%;
-    line-height:120%;
-    text-shadow: black 1px 1px 1px;
-  }
-  .wrapper {
-    text-align: center;
-  }
-  .btn{
-    font-size: 200%;
-    padding: 20px 20px 20px 20px;
-    text-shadow: black 1px 1px 1px;
-    background-color:#4AA02C;
+  margin-top: 175px;
+  margin-right: 350px;
+  margin-left: 350px;
+  position: fixed;
+    h1{
+      color: #ffffff;
+      font-size: 300%;
+      line-height:110%;
+      text-shadow: black 1px 1px 1px;
+      text-align:center;
+    }
   }
 }
 
+/*--Plug In Page--*/
 
+.form-signin {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.0470588) 0 1px 2px;
+  background-color:#FFFFFF;
+  border:1px solid #E5E5E5;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  box-shadow:rgba(0, 0, 0, 0.0470588) 0 1px 2px;
+  margin:0 auto 20px;
+  max-width:300px;
+  padding:19px 29px 29px;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+  margin-bottom:10px;
+}
 

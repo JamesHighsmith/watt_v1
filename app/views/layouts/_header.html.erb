@@ -10,18 +10,24 @@
       </a>
  			
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <%= link_to image_tag("logo.png", :height => "40", :width => "120", :class => "brand"), "/"  %>
  
+      <%= link_to image_tag("logo.png", :height => "40", :width => "120", :class => "brand"), "/"  %>
+
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse  navbar-responsive-collapse">
+        
         <!-- .nav, .navbar-search, .navbar-form, etc -->
+        
         <ul class="nav pull-right">
+
+        	<!-- Investments -->
+
         	<li>
         		<a href="/browse_investments">Browse Investments</a>
         	</li>
-        	
-        	<li class="divider-vertical"></li>
 					
+        	<!-- Participate Dropdown Menu -->
+
 					<li class="dropdown">
 				    <a href="/participate" class="dropdown-toggle" data-toggle="dropdown">
 				      Participate
@@ -54,10 +60,14 @@
 				    </ul>
 				  </li>
 					
+				  <!-- Submit Project Idea -->
+
 					<li class="btn btn-success submit_btn">
 						<a href="/submit_project">Submit A Project Idea</a>
 					</li>
-				  
+
+					<!-- Learn More Dropdown Menu -->
+
 				  <li class="dropdown">
 				  	<a href="/learn_more" class="dropdown-toggle" data-toggle="dropdown">
 				      Learn More
@@ -74,7 +84,7 @@
 							<li class="divider"></li>
 							<li>
 								<a href="/blog">
-									<i class="icon-comment"/></i>
+									<i class="icon-bullhorn"/></i>
 									Blog<br>
 								<h6>Check out what we are working on</h6>
 								</a>
@@ -89,12 +99,17 @@
 							</li>
 						</ul>
 				  </li>
+				 
+				 <!-- Search Box -->
+
 					<li>
 						<form class="navbar-search pull-left" action="">
-							<input type="text" class="search-query span2"/>
+							<input type="text" class="search-query span2" placeholder="Power Search"/>
 						</form>
 					</li>
 					
+					<!-- Sign up/in/out -->
+
 					<li>
 						<% if user_signed_in? %>
 							<li class="dropdown">
@@ -116,13 +131,11 @@
 							<li>
 								<%= link_to("Plug In", new_user_session_path) %>
 							</li>
-							<li class="divider-vertical"></li>
 		          <li>
 		          	<%= link_to("Sign Up", new_user_registration_path) %>
 		          </li>
 	          <% end %>
-          </li>  
-					
+          </li> 					
 				</ul>
       </div>
     </div>
