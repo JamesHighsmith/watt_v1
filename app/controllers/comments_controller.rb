@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @commentable = find_commentable
+    @comments = @commentable.comments
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,13 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+end
+
+def find_commentable
+  params.each do |name, value|
+    if name =~ /(.+)_id$/
+      return $1.classify.constantize.find(value)
+    end
+  end
+  nil
 end
