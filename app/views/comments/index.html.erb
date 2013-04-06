@@ -1,27 +1,18 @@
-<h1>Listing comments</h1>
+<h1>Comments</h1>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th>Commentable</th>
-    <th>Commentable type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul id="comments">
+  <% @comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
 
-<% @comments.each do |comment| %>
-  <tr>
-    <td><%= comment.content %></td>
-    <td><%= comment.commentable_id %></td>
-    <td><%= comment.commentable_type %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<h2>New Comment</h2>
+<% form_for [@commentable, Comment.new] do |form| %>
+  <ol class="formList">
+    <li>
+      <%= form.label :content %>
+      <%= form.text_area :content, :rows => 5 %>
+    </li>
+    <li><%= submit_tag "Add comment" %></li>
+  </ol>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Comment', new_comment_path %>
