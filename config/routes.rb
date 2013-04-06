@@ -1,14 +1,9 @@
 WattV1::Application.routes.draw do
   
   resources :events
-
-
   resources :projects
-
-
   resources :comments
-
-
+  mount Commontator::Engine => '/commontator'
   devise_for :users
 
   get "users/new"

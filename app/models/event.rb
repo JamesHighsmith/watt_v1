@@ -1,3 +1,4 @@
 class Event < ActiveRecord::Base
-  # attr_accessible :title, :body
+  has_many :comments, :as => :commentable
+  acts_as_commontable
 end
