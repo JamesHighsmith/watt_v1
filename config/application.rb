@@ -62,6 +62,12 @@ module WattV1
     config.assets.version = '1.0'
   
     # Required for devise
-    config.assets.initialize_on_precompile = false    
+    config.assets.initialize_on_precompile = false 
+
+    config.generators do |g|
+      g.stylesheets false
+      g.test_framework :shoulda
+      g.fixture_replacement :factory_girl
+    end   
   end
 end

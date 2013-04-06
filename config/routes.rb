@@ -1,5 +1,14 @@
 WattV1::Application.routes.draw do
   
+  resources :events
+
+
+  resources :projects
+
+
+  resources :comments
+
+
   devise_for :users
 
   get "users/new"

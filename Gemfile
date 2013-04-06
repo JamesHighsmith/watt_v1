@@ -5,6 +5,8 @@ gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'devise'
 gem 'simple_form'
+gem 'acts_as_votable', '~> 0.5.0'
+gem 'commontator', '~> 1.1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
