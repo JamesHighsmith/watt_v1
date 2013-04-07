@@ -1,5 +1,34 @@
-<h1>New project</h1>
+<% if user_signed_in? %>
+	
+	<div class="container">
+		<div class="hero-unit"
+			<h1>Bring your clean energy project to life!</h1>
+			<h2>Fill out the following as best you can.</h2>
 
-<%= render 'form' %>
+			<%= render 'form' %>
 
-<%= link_to 'Back', projects_path %>
+			<%= link_to 'Back', projects_path %>
+		</div>
+	</div>
+
+<% else %>
+
+	<div class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Plug In To Play</h2>
+			<ul>
+				
+				<li class="btn btn-large btn-block btn-success plug_in_to_play">
+					<%= link_to("Sign Up", new_user_registration_path) %>
+				</li>
+				
+				<br>
+				
+				<li class="btn btn-large btn-block btn-success plug_in_to_play">
+					<%= link_to("Plug In", new_user_session_path)%>
+				</li>
+				
+			</ul>
+		</form>
+	</div>
+<% end %>

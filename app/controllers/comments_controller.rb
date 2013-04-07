@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @commentable = find_commentable
-    @comments = @commentable.comments
+    @comment = @commentable.comments
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,16 +1,13 @@
 WattV1::Application.routes.draw do
-  
+mount Commontator::Engine => '/commontator'  
   resources :events
   resources :projects
   resources :comments
-<<<<<<< HEAD
-  mount Commontator::Engine => '/commontator'
-=======
+
 # map.resources :articles, :has_many => :comments
 # map.resources :photos, :has_many => :comments
 # map.resources :events, :has_many => :comments
 
->>>>>>> Polymorphic
   devise_for :users
 
   get "users/new"

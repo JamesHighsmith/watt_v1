@@ -63,7 +63,7 @@
 				  <!-- Submit Project Idea -->
 
 					<li class="btn btn-success submit_btn">
-						<a href="/submit_project">Submit A Project Idea</a>
+						<%= link_to("Submit A Project Idea", new_project_path) %>
 					</li>
 
 					<!-- Learn More Dropdown Menu -->
@@ -104,38 +104,74 @@
 
 					<li>
 						<form class="navbar-search pull-left" action="">
-							<input type="text" class="search-query span2" placeholder="Power Search"/>
+							<input type="text" class="search-query span2" placeholder=""/>
 						</form>
 					</li>
 					
 					<!-- Sign up/in/out -->
 
-					<li>
-						<% if user_signed_in? %>
-							<li class="dropdown">
-						  	<a href="/profile" class="dropdown-toggle" data-toggle="dropdown">
-						      <%= current_user.name %>&nbsp<%= current_user.lastname %>
-						      <b class="caret"></b>
-						    </a>
-						    <ul class="dropdown-menu">
-						    	<li>
-										<%= link_to("Profile", edit_user_registration_path) %>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
-									</li>
-								</ul>
-						  </li>
-						<% else %>
-							<li>
-								<%= link_to("Plug In", new_user_session_path)%>
-							</li>
-		          <li>
-		          	<%= link_to("Sign Up", new_user_registration_path) %>
-		          </li>
-	          <% end %>
-          </li> 					
+					
+					<% if user_signed_in? %>
+						<li class="dropdown">
+					  	<a href="/profile" class="dropdown-toggle" data-toggle="dropdown">
+					      <%= current_user.name %>&nbsp<%= current_user.lastname %>
+					      <b class="caret"></b>
+					    </a>
+					    <ul class="dropdown-menu">
+					    	<li>
+									<%= link_to("Profile", edit_user_registration_path) %>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<%= link_to("Unplug", destroy_user_session_path, method: :delete) %>
+								</li>
+							</ul>
+					  </li>
+
+					<% else %>
+						
+						<li class="dropdown">
+							<a href="new_user_session_path" class="dropdown-toggle" data-toggle="dropdown">
+								Plug In
+								<b class="caret"></b>
+							</a>
+					    
+					    <ul class="dropdown-menu">
+					    	<li>
+					    		<form class="form-horizontal">
+									  <div class="control-group">
+									  	<label class="control-label" for="inputEmail">Email</label>
+									    <div class="controls">
+									      <input type="text" id="inputEmail" placeholder="user@example.com">
+									    </div>
+									  </div>
+									  <div class="control-group">
+									    <label class="control-label" for="inputPassword">Password</label>
+									    <div class="controls">
+									      <input type="password" id="inputPassword" placeholder="Password">
+									    </div>
+									  </div>
+									  <div class="control-group">
+									    <div class="controls">
+									      <label class="checkbox">
+									        <input type="checkbox"> Remember me
+									      </label>
+									      <button type="submit" class="btn btn-success btn-large btn-block">Plug In</button>
+									      <li class="divider"></li>
+									      <button type="submit" class="btn btn-warning btn-large btn-block">No! Sign Me Up!</button>
+									    </div>
+									  </div>
+									</form>
+								</li>
+							</ul>
+						</li>
+	          
+	          <li>
+	          	<%= link_to("Sign Up", new_user_registration_path) %>
+	          </li>
+
+          <% end %>
+           					
 				</ul>
       </div>
     </div>

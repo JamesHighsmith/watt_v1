@@ -53,6 +53,13 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
     display: block;    
 }
 
+.form-horizontal{
+  padding: 10px 10px 10px 10px;
+  margin-right: 20px;
+  margin-bottom: -20px;
+  margin-left: -100px;
+}
+
 
 
 
@@ -121,7 +128,6 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
     .btn{
       font-size: 200%;
       padding: 20px 20px 20px 20px;
-      text-shadow: black 1px 1px 1px;
       color: #ffffff;
     }
   }
@@ -171,4 +177,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 .form-signin .form-signin-heading, .form-signin .checkbox {
   margin-bottom:10px;
 }
+
+/*--Project Submit Plug In To Play--*/
+
+.plug_in_to_play li{
+  color: #ffffff;
+}
+
+
 
