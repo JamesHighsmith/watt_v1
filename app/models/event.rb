@@ -1,15 +1,10 @@
 class Event < ActiveRecord::Base
-<<<<<<< HEAD
+
+  belongs_to :projects
+
   has_many :comments, :as => :commentable
-  acts_as_commontable
-=======
+  has_many :votes
+ 
   # attr_accessible :title, :body
-acts_as_votable
->>>>>>> Polymorphic
+
 end
-
-@event = event.new(:name => 'my post!')
-@event.save
-
-@event.liked_by @user
-@event.votes.size # => 1

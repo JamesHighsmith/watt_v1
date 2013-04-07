@@ -1,12 +1,23 @@
 WattV1::Application.routes.draw do
-mount Commontator::Engine => '/commontator'  
+
   resources :events
   resources :projects
   resources :comments
 
-# map.resources :articles, :has_many => :comments
-# map.resources :photos, :has_many => :comments
-# map.resources :events, :has_many => :comments
+#  map.resources :users, :has_many => :projects
+#  map.resources :users, :has_many => :comments
+#  map.resources :users, :has_many => :subcomments
+#  map.resources :users, :has_many => :votes
+  
+#  map.resources :projects, :has_many => :events
+#  map.resources :projects, :has_many => :comments
+#  map.resources :projects, :has_many => :votes
+
+#  map.resources :events, :has_many => :comments
+#  map.resources :events, :has_many => :votes
+  
+#  map.resources :comments, :has_many => :votes
+#  map.resources :comments, :has_many => :subcomments
 
   devise_for :users
 

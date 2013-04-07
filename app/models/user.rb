@@ -9,7 +9,10 @@ class User < ActiveRecord::Base
   attr_accessible :name, :lastname, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  # 
+
+  has_many :projects
+  has_many :votes, :as => :votable 
   has_many :comments, :as => :commentable
-  acts_as_commontator
+  has_many :subcomments, :as => :subcommentable
+
 end
