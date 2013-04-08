@@ -7,7 +7,7 @@ $navbarLinkColorActive: #ffffff;
 $navbarHeight: 35px;
 $baseFontFamily: Oxygen;
 
-@import url(http://fonts.googleapis.com/css?family=Oxygen);
+/*--@import url(http://fonts.googleapis.com/css?family=Oxygen);--*/
 
 @import 'bootstrap';
 body{
@@ -180,8 +180,16 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
 /*--Project Submit Plug In To Play--*/
 
-.plug_in_to_play li{
-  color: #ffffff;
+.plug_in_to_play {
+  a{
+    color: #ffffff;
+    link {
+      color: none;
+      hover {
+        color: #ffffff;
+      }
+    }
+  }
 }
 
 /*--New Project Submit Page--*/
