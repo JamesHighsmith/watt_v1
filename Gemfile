@@ -7,6 +7,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'acts_as_votable', '~> 0.5.0'
 gem 'commontator', '~> 1.1.0'
+gem "paperclip", "~> 3.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
