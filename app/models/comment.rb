@@ -1,12 +1,10 @@
 class Comment < ActiveRecord::Base
-  belongs_to :commentable, :polymorphic => true
+  attr_accessible :content
 
-  belongs_to :users
-  belongs_to :project
-  belongs_to :events
+  belongs_to :commentable, polymorphic: true
+  belongs_to :user 
   
-  has_many :votes, :as => :votable
-  has_many :subcomments, :as => :subcommentable 
+  validates :content, presence: true, length: { maximum: 140 }
 
+  default_scope order: 'comments.created_at DESC'
 end
-

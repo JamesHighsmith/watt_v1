@@ -1,23 +1,12 @@
 WattV1::Application.routes.draw do
 
-  resources :events
-  resources :projects
+resources :events do
   resources :comments
+end
 
-#  map.resources :users, :has_many => :projects
-#  map.resources :users, :has_many => :comments
-#  map.resources :users, :has_many => :subcomments
-#  map.resources :users, :has_many => :votes
-  
-#  map.resources :projects, :has_many => :events
-#  map.resources :projects, :has_many => :comments
-#  map.resources :projects, :has_many => :votes
-
-#  map.resources :events, :has_many => :comments
-#  map.resources :events, :has_many => :votes
-  
-#  map.resources :comments, :has_many => :votes
-#  map.resources :comments, :has_many => :subcomments
+resources :projects do
+  resources :comments
+end
 
   devise_for :users
 

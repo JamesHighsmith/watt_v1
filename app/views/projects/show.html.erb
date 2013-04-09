@@ -1,5 +1,7 @@
+<div class="hero-unit">
 <p id="notice"><%= notice %></p>
 
+<table class="table table-bordered table-hover">
   <p>
     <b>Idea:</b>
     <%= @project.idea %>
@@ -26,5 +28,6 @@
   </p>
 </table>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Edit', edit_project_path(@project) %>
 <%= link_to 'Back', projects_path %>
+</div>
