@@ -1,5 +1,11 @@
+<!--Show Project-->
 
   <table>
+
+    <p>
+      <b>Creator:</b>
+      <%= @project.user.name %>&nbsp&nbsp<%= @project.user.lastname.first.capitalize %>.
+    </p>
 
     <p>
       <b>Idea:</b>
@@ -24,6 +30,11 @@
     <p>
       <b>Solution:</b>
       <%= @project.solution %>
+    </p>
+
+    <p>
+      <b>Created:</b>
+      <%= time_ago_in_words(@project.created_at) %> ago.
     </p>
   </table>
 

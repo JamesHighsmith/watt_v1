@@ -13,6 +13,8 @@ end
 
   devise_for :users
 
+  match 'users/:id' => 'users#show'
+
   get "users/new"
 
   root to: 'static_pages#home'

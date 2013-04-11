@@ -1,7 +1,8 @@
 <div class="form-signin">
 
   <h1>
-    <%= gravatar_for @user %><%= current_user.name %>&nbsp<%= current_user.lastname %>
+    <%= gravatar_for @user %><br><br>
+    <%= current_user.name %>, update your profile!
   </h1>
 
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form' }) do |f| %>
@@ -25,12 +26,3 @@
 
   <%= link_to "Back", :back %>
   
-
-<aside class="span4">
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-    <section>
-      <%= render 'shared/comment_form' %>
-    </section>
-  </aside>

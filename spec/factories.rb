@@ -10,8 +10,8 @@ FactoryGirl.define do
     end
   end
 
-  factory :comment do
-    content "Lorem ipsum"
+  factory :project do
+    idea "Lorem ipsum"
     user
   end
 end

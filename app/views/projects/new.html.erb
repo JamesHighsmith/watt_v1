@@ -1,9 +1,11 @@
+<!--New Project-->
+
 <% if user_signed_in? %>
 	
 	<div class="container">
 		<div class="hero-unit">
-			<h1>Bring your clean energy project to life!</h1>
-			<h2>Fill out the following as best you can.</h2>
+			<h1><%= current_user.name %>,<br> bring your clean energy project to life!</h1>
+			<h2>Please fill out the following as best you can.</h2>
 			
 				<%= render 'form' %>
 			

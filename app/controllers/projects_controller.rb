@@ -3,7 +3,10 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   
   def index
-    @projects = Project.all
+    @projects = Project.all(params[:id])
+    @users = User.where("name LIKE ? ", "%#{params[:user]}%")
+    ### I don't know what to put here so that the project.user.name shows up now only user_id shows the number, 
+    ### Maybe the "name" is not defined?
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +44,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(params[:project])
+    @project = current_user.projects.new(params[:project])
 
     respond_to do |format|
       if @project.save

@@ -13,12 +13,12 @@
   </aside>
   
   <div class="span8">
-    <% if @user.comments.any? %>
-      <h3>Comments (<%= @user.comments.count %>)</h3>
-      <ol class="comments">
-        <%= render @comments %>
+    <% if @user.projects.any? %>
+      <h3>Comments (<%= @user.projects.count %>)</h3>
+      <ol class="projects">
+        <%= render @projects %>
       </ol>
-      <%= will_paginate @comments %>
+      <%= will_paginate @projects %>
     <% end %>
   </div>
 </div>
