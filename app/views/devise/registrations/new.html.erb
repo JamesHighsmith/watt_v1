@@ -3,7 +3,7 @@
 <div class="form-signin">
 	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'form'}) do |f| %>
 	  <%= f.error_notification %>
-
+	  <legend>Plug-In to Play</legend>
 	  <%= f.input :name, label: 'First Name', placeholder: "first" %>
 	  <%= f.input :lastname, label: 'Last Name', placeholder: "last" %>
 	  <%= f.input :email, placeholder: "user@example.com" %>

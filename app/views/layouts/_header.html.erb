@@ -23,20 +23,20 @@
         	<!-- Investments -->
 
         	<li>
-        		<a href="/browse_investments">Browse Investments</a>
+        		<%= link_to("Browse Investments", new_user_registration_path) %>
         	</li>
 					
         	<!-- Participate Dropdown Menu -->
 
 					<li class="dropdown">
 				    <a href="/participate" class="dropdown-toggle" data-toggle="dropdown">
-				      Participate
+				      Influence
 				      <b class="caret"></b>
 				    </a>
 				    
 				    <ul class="dropdown-menu">
 				      <li>
-				      	<a href="/research">
+				      	<a href="<%= new_user_registration_path %>" >
 									<i class="icon-book"/></i>
 									Research A Project<br>
 								<h6>Vote and collaborate on new projects</h6>
@@ -44,15 +44,15 @@
 							</li>
 							<li class="divider"></li>
 				    	<li>
-								<a href="/design">
+								<a href="<%= new_user_registration_path %>">
 									<i class="icon-pencil"/></i>
-									Design A Projects<br>
+									Design A Project<br>
 								<h6>Help bring chosen projects to life</h6>
 								</a>
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="/finalize">
+								<a href="<%= new_user_registration_path %>">
 									<i class="icon-flag"/></i>
 									Finalize A Project<br>
 								<h6>Help put the final touches on projects</h6>
@@ -101,16 +101,19 @@
 						</ul>
 				  </li>
 				 
-				 <!-- Search Box -->
+				 <!-- Search Box 
 
 					<li>
 						<form class="navbar-search pull-left" action="">
 							<input type="text" class="search-query span2" placeholder=""/>
 						</form>
 					</li>
-					
+					-->
+					<li>
+						&nbsp&nbsp&nbsp&nbsp
+					</li>
 					<!-- Sign up/in/out -->
-
+				
 					<% if user_signed_in? %>
 						<li class="dropdown">
 					  	<a href="/profile" class="dropdown-toggle" data-toggle="dropdown">
@@ -200,7 +203,7 @@
 					  </li>
 
 					<% else %>
-						
+<!--
 						<li class="dropdown">
 							<a href="new_user_session_path" class="dropdown-toggle" data-toggle="dropdown">
 								Plug In
@@ -234,7 +237,13 @@
 								</li>
 							</ul>
 						</li>
-	          
+-->
+						
+
+						<li>
+	          	<%= link_to("Plug In", new_user_session_path) %>
+	          </li>
+
 	          <li>
 	          	<%= link_to("Sign Up", new_user_registration_path) %>
 	          </li>

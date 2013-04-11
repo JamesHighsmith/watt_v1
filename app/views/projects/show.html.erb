@@ -1,33 +1,31 @@
-<div class="hero-unit">
-<p id="notice"><%= notice %></p>
 
-<table class="table table-bordered table-hover">
-  <p>
-    <b>Idea:</b>
-    <%= @project.idea %>
-  </p>
+  <table>
 
-  <p>
-    <b>Address:</b>
-    <%= @project.address %>
-  </p>
+    <p>
+      <b>Idea:</b>
+      <%= @project.idea %>
+    </p>
 
-  <p>
-    <b>Zipcode:</b>
-    <%= @project.zipcode %>
-  </p>
+    <p>
+      <b>Address:</b>
+      <%= @project.address %>
+    </p>
 
-  <p>
-    <b>Problem:</b>
-    <%= @project.problem %>
-  </p>
+    <p>
+      <b>Zipcode:</b>
+      <%= @project.zipcode %>
+    </p>
 
-  <p>
-    <b>Solution:</b>
-    <%= @project.solution %>
-  </p>
-</table>
+    <p>
+      <b>Problem:</b>
+      <%= @project.problem %>
+    </p>
+
+    <p>
+      <b>Solution:</b>
+      <%= @project.solution %>
+    </p>
+  </table>
 
 <%= link_to 'Edit', edit_project_path(@project) %>
 <%= link_to 'Back', projects_path %>
-</div>

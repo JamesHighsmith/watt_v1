@@ -8,6 +8,9 @@ resources :projects do
   resources :comments
 end
 
+#  resources :sessions,   only: [:new, :create, :destroy]
+  resources :comments, only: [:create, :destroy]
+
   devise_for :users
 
   get "users/new"

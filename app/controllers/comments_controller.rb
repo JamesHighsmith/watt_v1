@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_commentable
+  before_filter :signed_in_user
   
   def index
     @comments = @commentable.comments

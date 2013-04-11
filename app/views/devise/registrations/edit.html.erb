@@ -26,13 +26,11 @@
   <%= link_to "Back", :back %>
   
 
-  <div class="span8">
-    <% if @user.comments.any? %>
-      <h3>Comments (<%= @user.comments.count %>)</h3>
-      <ol class="comments">
-        <%= render @comments %>
-      </ol>
-      <%= will_paginate @comments %>
-    <% end %>
-  </div>
-</div>
+<aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/comment_form' %>
+    </section>
+  </aside>

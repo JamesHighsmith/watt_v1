@@ -1,7 +1,6 @@
-<div id="comments">
-<% @comments.each do |comment| %>
-  <div class="comment">
-    <%= simple_format comment.content %>
-  </div>
-<% end %>
-</div>
+<li>
+  <span class="content"><%= comment.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+  </span>
+</li>

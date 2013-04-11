@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
-  
-  has_many :comments, as: :commentable
+
+  belongs_to :user
 
   attr_accessible :address, :idea, :problem, :solution, :zipcode
   
