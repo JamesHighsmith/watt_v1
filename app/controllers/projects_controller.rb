@@ -1,10 +1,9 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.json
-  
+  before_filter :authenticate_user!, except: [:index]
   def index
     @projects = Project.all(params[:id])
-    @users = User.where("name LIKE ? ", "%#{params[:user]}%")
+#    @user = current_user.projects.find(params[:id])    
+
     ### I don't know what to put here so that the project.user.name shows up now only user_id shows the number, 
     ### Maybe the "name" is not defined?
 
@@ -13,9 +12,7 @@ class ProjectsController < ApplicationController
       format.json { render json: @projects }
     end
   end
-
-  # GET /projects/1
-  # GET /projects/1.json
+  
   def show
     @project = Project.find(params[:id])
 
@@ -25,10 +22,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/new
-  # GET /projects/new.json
   def new
-    @project = Project.new
+    @project = current_user.projects.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +31,10 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.json
   def create
     @project = current_user.projects.new(params[:project])
 
@@ -57,10 +49,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PUT /projects/1
-  # PUT /projects/1.json
   def update
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -73,10 +63,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
-  # DELETE /projects/1.json
   def destroy
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     @project.destroy
 
     respond_to do |format|

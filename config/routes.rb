@@ -1,12 +1,7 @@
 WattV1::Application.routes.draw do
 
-resources :events do
-  resources :comments
-end
-
-resources :projects do
-  resources :comments
-end
+  resources :projects, :has_many => :comments
+  resources :posts, :has_many => :comments
 
 #  resources :sessions,   only: [:new, :create, :destroy]
   resources :comments, only: [:create, :destroy]

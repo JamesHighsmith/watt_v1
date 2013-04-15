@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :lastname, :email, :password, :password_confirmation, :remember_me
   
-  has_many :projects, dependent: :destroy
+  has_many  :projects,  dependent: :destroy
+#  has_many  :comments,  dependent: :destroy
+#  votes     :votes,     dependent: :destroy
  
 end

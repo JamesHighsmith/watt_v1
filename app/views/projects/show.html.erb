@@ -1,4 +1,4 @@
-<!--Show Project-->
+  <!--Show Project-->
 
   <table>
 
@@ -37,6 +37,9 @@
       <%= time_ago_in_words(@project.created_at) %> ago.
     </p>
   </table>
-
+<% if current_user == @project.user %>
 <%= link_to 'Edit', edit_project_path(@project) %>
+<% end %>
 <%= link_to 'Back', projects_path %>
+
+
